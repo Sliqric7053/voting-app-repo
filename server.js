@@ -27,7 +27,12 @@ app.use(passport.session());
 
 routes(app, passport);
 
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 8080 || process.env.IP;
 app.listen(port,  function () {
 	console.log('Node.js listening on port ' + port + '...');
 });
+
+// app.listen(process.env.PORT, process.env.IP, function(){
+//   console.log("The YelpCamp Server Has Started!");
+// });
+
